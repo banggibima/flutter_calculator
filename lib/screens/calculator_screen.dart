@@ -46,11 +46,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             try {
               Parser p = Parser();
               Expression exp = p.parse(expression);
-
               ContextModel cm = ContextModel();
               result = '${exp.evaluate(EvaluationType.REAL, cm).round()}';
-            } catch (e) {
-              result = e.toString();
+            } catch (err) {
+              result = err.toString();
             }
           }
           break;
@@ -71,7 +70,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           children: <Widget>[
             Container(
               padding: EdgeInsets.symmetric(
-                horizontal: 30,
+                horizontal: 30.0,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -91,9 +90,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             ),
             Container(
               padding: EdgeInsets.symmetric(
-                horizontal: 30,
+                horizontal: 30.0,
               ),
-              height: 100,
+              height: 100.0,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
@@ -111,18 +110,18 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 30.0,
             ),
             Container(
               padding: EdgeInsets.symmetric(
-                vertical: 30,
-                horizontal: 30,
+                vertical: 30.0,
+                horizontal: 30.0,
               ),
               decoration: BoxDecoration(
                 color: Color(0xFF2C2F3A),
                 borderRadius: BorderRadius.circular(40.0),
               ),
-              height: 460,
+              height: 460.0,
               child: Column(
                 children: <Widget>[
                   Expanded(
@@ -204,7 +203,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   ) {
     return InkWell(
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.all(10.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: Color(0xFF272B33),
@@ -235,7 +234,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   ) {
     return InkWell(
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.all(10.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: Color(0xFF272B33),
