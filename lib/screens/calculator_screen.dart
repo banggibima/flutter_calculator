@@ -3,7 +3,9 @@ import "package:flutter/material.dart";
 import "package:math_expressions/math_expressions.dart";
 
 class CalculatorScreen extends StatefulWidget {
-  const CalculatorScreen({Key? key}) : super(key: key);
+  const CalculatorScreen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   _CalculatorScreenState createState() => _CalculatorScreenState();
@@ -52,7 +54,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               Parser p = Parser();
               Expression exp = p.parse(expression);
               ContextModel cm = ContextModel();
-              result = '${exp.evaluate(EvaluationType.REAL, cm).round()}';
+              result = exp.evaluate(EvaluationType.REAL, cm).round().toString();
             } catch (err) {
               result = err.toString();
             }
@@ -192,7 +194,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                           CupertinoIcons.percent,
                           Color(0xFF26F8D2),
                           Color(0xFF272B33),
-                          30.0,
+                          27.5,
                           "\u{0025}",
                         ),
                         operatorButton(
